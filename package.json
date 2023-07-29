@@ -1,13 +1,13 @@
 {
-  "name": "node-red-contrib-brads-i2c-nodes",
-  "version": "0.0.5-alpha",
+  "name": "node-red-contrib-brads-i2c-nodes-extended",
+  "version": "0.0.1",
   "description": "Brad's Node RED i2c sensor modules.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "bignumber.js": "^4.0.2",
-    "i2c-bus": "^1.2.2"
+    "i2c-bus": "^5.2.2"
   },
   "node-red": {
     "nodes": {
@@ -17,28 +17,21 @@
       "bme280": "sensors/bme280-node.js",
       "htu21d": "sensors/htu21d-node.js",
       "i2cbus": "sensors/i2c-bus.js",
-      "tsl2561": "sensors/tsl2561-node.js"
+      "tsl2561": "sensors/tsl2561-node.js",
+      "sht3x": "sensors/sht3x-node.js",
+      "scd30": "sensors/scd30-node.js",
+      "sps30": "sensors/sps30-node.js",
+      "sen5x": "sensors/sen5x-node.js"
     }
   },
   "repository": {
-    "type": "git",
-    "url": "https://github.com/pedalPusher68/node-red-contrib-brads-i2c-nodes.git"
+      "type": "git",
+      "url": "https://github.com/rusheee1/node-red-contrib-brads-i2c-nodes-extended.git"
   },
-  "keywords": [
-    "node-red",
-    "mcp9808",
-    "bmp180",
-    "bmp280",
-    "bme280",
-    "htu21d",
-    "htu21d(f)",
-    "tsl2561",
-    "i2c"
-  ],
-  "author": "Brad Smith",
-  "license": "LICENSE",
-  "bugs": {
-    "url": "https://github.com/pedalPusher68/node-red-contrib-brads-i2c-nodes/issues"
+  "author": "Brad Smith, Martin Neumann",
+    "license": "LICENSE",
+    "bugs": {
+      "url": "https://github.com/rusheee1/node-red-contrib-brads-i2c-nodes-extended/issues"
   },
-  "homepage": "https://github.com/pedalPusher68/node-red-contrib-brads-i2c-nodes"
+  "homepage": "https://github.com/rusheee1/node-red-contrib-brads-i2c-nodes-extended"
 }

@@ -1,0 +1,47 @@
+<script type="text/javascript">
+  RED.nodes.registerType('sps30', {
+    category: 'i2c sensors',
+    defaults: {
+      address: {value: 105, required: true, validate:RED.validators.number() },
+      debugMode: {value: true}
+    },
+    color: '#75aaff',
+    inputs: 1,
+    outputs: 2,
+    icon: 'chip.png',
+    label: function () {
+      return `sps30 @ 0x${Number(this.address).toString(16)}`;
+    },
+    labelStyle: function () {
+      return this.address ? 'node_label_italic' : '';
+    },
+    oneditsave: function() {
+      this.address = Number(this.address);
+    }
+  });
+</script>
+
+<script type="text/x-red" data-template-name="sps30">
+    <div class="form-row">
+        <span><i class="fa fa-microchip" aria-hidden="true"></i> SPS30 Particulate Matter Sensor I2C Configuration</span>
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-debugMode"><i class="fa fa-tag"></i> Debug Mode</label>
+        <input type="checkbox" id="node-input-debugMode" placeholder="Debug Mode">
+    </div>
+
+    <div class="form-tips"><b>Tip:</b> This is here to help.</div>
+
+</script>
+
+<script type="text/x-red" data-help-name="sps30">
+   <p>Some useful help text to introduce the node.</p>
+   <p>Outputs an object called <code>msg</code> containing <code>msg.topic</code> and
+   <code>msg.payload</code>.</p>
+   <p><code>msg.payload</code> is a <i>String</i>.</p>
+
+</script>

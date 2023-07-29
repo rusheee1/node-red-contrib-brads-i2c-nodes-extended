@@ -26,10 +26,10 @@ function computeDewpoint(temp, rh) {
   let exponent = A.minus(B.div(C.plus(temp))).toNumber();
   let pp = Math.pow(10, exponent);
   let log10Operand = pp * rh / 100.0;
-  let TDP = -1 * ( C.toNumber() + (B.toNumber() / (Math.log10(log10Operand) - A.toNumber())));
+  let TDP = -1 * (C.toNumber() + (B.toNumber() / (Math.log10(log10Operand) - A.toNumber())));
   let TDPStr = TDP.toString();
   if (TDPStr.length > 12) {
-    TDP = new BigNumber( TDPStr.substr(0, 9) );
+    TDP = new BigNumber(TDPStr.substr(0, 9));
   }
   return TDP.toString();
 }
@@ -38,18 +38,18 @@ exports.computeDewpoint = computeDewpoint;
 
 function computeAltitude(Pressure /* in Pa */) {
   let part = Math.pow(Pressure / 101325, (1 / 5.255));
-  return 44330 * ( 1 - part );
+  return 44330 * (1 - part);
 }
 
 exports.computeAltitude = computeAltitude;
 
 
-function roundValue( value, decimals = 2 ) {
+function roundValue(value, decimals = 2) {
   let valStr = value.toString();
-  if (valStr.length > 10 ) {
+  if (valStr.length > 10) {
     valStr = valStr.substr(0, 10)
   }
-  return new BigNumber(valStr).toFixed( decimals );
+  return new BigNumber(valStr).toFixed(decimals);
 }
 
 exports.roundValue = roundValue;
@@ -74,4 +74,3 @@ function getTimestamp() {
 }
 
 exports.getTimestamp = getTimestamp;
-
